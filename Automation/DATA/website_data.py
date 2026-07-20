@@ -1,0 +1,22 @@
+websites = {
+    "Google": "https://www.google.com",
+    "Youtube": "https://youtube.com",
+    "Gmail": "https://mail.google.com",
+    "Google Drive": "https://drive.google.com",
+    "Drive": "https://drive.google.com",
+    "Find Hub" : "https://www.google.com/android/find/?login",
+    "Chat GPT": "https://chatgpt.com",
+    "Monkey type": "https://monkeytype.com/",
+    "Gemini": "https://gemini.google.com",
+    "Perplexity": "https://www.perplexity.ai",
+    "GitHub": "https://github.com",
+    "GitHub documentation" : "https://docs.chaicode.com/youtube/chai-aur-git/github/",
+    "GitHub docs" : "https://docs.chaicode.com/youtube/chai-aur-git/github/",
+    "Flipkart": "https://www.flipkart.com",
+    "Amazon": "https://www.amazon.in",
+    "Python org": "https://www.python.org",
+    "Python package": "https://pypi.org",
+    "Herbalife": "https://www.myherbalife.com/en-IN/Home/Default/Mb",
+    "Nobero": "https://nobero.com/",
+    "Digilocker": "https://www.digilocker.gov.in/web/home"
+}
