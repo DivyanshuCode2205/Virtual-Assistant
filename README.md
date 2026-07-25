@@ -44,7 +44,7 @@ The main file starts the assistant, checks internet-related functionality, start
 Install Python 3.10+ recommended, then install the required packages:
 
 ```bash
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 > Note: I would suggest to use a Virtual environment, to isolate the dependencies of this project from the Main environment.
