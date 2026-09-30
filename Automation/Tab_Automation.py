@@ -56,7 +56,7 @@ def perform_browser_action(text):
         zoom_in()
     elif "zoom out" in text or "zoom out karo" in text:
         zoom_out()
-    elif "refresh the page" in text or "page refresh karo" in text:
+    elif "refresh" in text or "refresh the page" in text or "page refresh karo" in text:
         refresh_page()
     elif "switch to next tab" in text or "next tab per jao" in text:
         switch_to_next_tab()
@@ -74,7 +74,7 @@ def perform_browser_action(text):
         open_dev_tools()
     elif "toggle full screen" in text or "full screen karo" in text:
         toggle_full_screen()
-    elif "switch to private window" in text or "private window kholo" in text:
+    elif "switch to private window" in text or "private window kholo" in text or "go incognito" in text or "turn on incognito" in text:
         open_private_window()
     else:
         pass

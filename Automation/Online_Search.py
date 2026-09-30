@@ -122,16 +122,17 @@ def clear_search():
 
 def youtube_search(query):
     webbrowser.open(link_1)
-    sleep(1.5)
-    gui.leftClick(1067, 210)
+    sleep(2.5)
+    gui.press("/")
+    # gui.leftClick(1067, 210)
     gui.write(query)
-    sleep(1)
+    sleep(1.3)
     gui.press("enter")
 
 def google_search(query):
     webbrowser.open(link_2)
-    sleep(2)
-    gui.leftClick(1144, 585)
+    sleep(2.5)
+    # gui.leftClick(1144, 585)
     gui.write(query)
     sleep(1.5)
     gui.press("enter")

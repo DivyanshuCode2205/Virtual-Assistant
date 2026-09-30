@@ -3,12 +3,13 @@ from winotify import Notification, audio
 from Automation.DATA.DLG_Data import dialogs_online, dialogs_offline
 from random import choice
 from Automation.Special_files.TTS_Fast import speak
+import pyttsx3
 import threading
 
 run_online_dlg = choice(dialogs_online)
 run_offline_dlg = choice(dialogs_offline)
     
-def online_notifier(text):
+def notifier(text):
     icon_path = r"D:\Pictures\Saved Pictures\gemini-svg.png"
 
     toast = Notification(
@@ -26,6 +27,14 @@ def online_notifier(text):
 
     toast.show()
 
+def offline_speak(text):
+    engine = pyttsx3.init()
+    voices = engine.getProperty("voices")
+    engine.setProperty('voice', voices[2].id)
+    engine.setProperty('rate', 150)
+    engine.say(text)
+    engine.runAndWait()
+
 def is_Online(url = "https://google.com/", timeout = 5):
     try:
         response = requests.get(url, timeout = timeout)
@@ -39,9 +48,12 @@ def internet_checker():
         t1 = threading.Thread(target=speak, args=(run_online_dlg, ))
         t1.start()
         t1.join()
-        online_notifier(run_online_dlg)
+        notifier(run_online_dlg)
     else:
-        online_notifier(run_offline_dlg)
+        t2 = threading.Thread(target=offline_speak, args=(run_offline_dlg, ))
+        t2.start()
+        t2.join()
+        notifier(run_offline_dlg)
 
 if __name__ == "__main__":
     internet_checker()

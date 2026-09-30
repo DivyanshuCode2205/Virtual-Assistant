@@ -15,7 +15,9 @@ def detect_window():
     
     elif "spotify" in active_window:
         return "spotify"
-    
+
+    elif "media viewer" in active_window:
+        return "telegram"
     else:
         pass
 
@@ -25,6 +27,8 @@ def media_pause():
         gui.press("k")
     elif current_window == "spotify":
         gui.press("playpause")
+    elif current_window == "telegram":
+        gui.press("k")
     else:
         pass
 
@@ -34,6 +38,8 @@ def media_resume():
         gui.press("k")
     elif current_window == "spotify":
         gui.press("playpause")
+    elif current_window == "telegram":
+        gui.press("k")
     else:
         pass
 

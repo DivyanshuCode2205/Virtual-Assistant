@@ -2,7 +2,7 @@ from .Web_Open import web_open
 from .Open_App import open_app
 from .music_play_yt import play_on_yt
 from .Play_music_Spotify import play_music_spotify
-from .music_control import music_brain_control
+from .media_control import music_brain_control
 from .Online_Search import youtube_search, google_search, universal_search, clear_search
 from .Tab_Automation import perform_browser_action
 from .Special_files.lock_computer import lock_computer
@@ -109,7 +109,7 @@ def Auto_main_brain(request):
     elif request == "close the tab" or request == "tab close karo":
         perform_browser_action(request)
 
-    elif any(word in request for word in ["private window kholo", "switch to private window", "aage jao", "go forward", "piche jao", "go back", "history kholo", "show history", "previous tab per jao", "switch to previous tab", "next tab per jao", "switch to next tab", "page refresh karo", "refresh the page", "zoom out karo", "zoom out", "zoom in karo", "zoom in", "browser menu kholo", "get browser menu", "tab band karo", "create new tab", "open new tab", "new tab kholo"]):
+    elif any(word in request for word in ["private window kholo", "switch to private window", "turn on incognito", "go incognito" "aage jao", "go forward", "piche jao", "go back", "history kholo", "show history", "previous tab per jao", "switch to previous tab", "next tab per jao", "switch to next tab", "refresh", "page refresh karo", "refresh the page", "zoom out karo", "zoom out", "zoom in karo", "zoom in", "browser menu kholo", "get browser menu", "tab band karo", "create new tab", "open new tab", "new tab kholo"]):
         perform_browser_action(request)
 
     elif any(word in request for word in ['play', 'resume', 'continue', 'pause', 'stop', 'next track', 'next song', 'previous track', 'last song']):
@@ -121,7 +121,7 @@ def Auto_main_brain(request):
         if prompt_reject not in request:
             battery_status(request)
     
-    elif "check internet speed" in request:
+    elif "check internet speed" in request or "check the internet speed" in request:
         check_internet_speed()
     
     elif request.startswith("lock"):

@@ -21,7 +21,7 @@ listen_thread = threading.Thread(target=listen, daemon=True)
 notifier_thread.start()
 notifier_thread.join()
 listen_thread.start()
-listen_thread.join(timeout=5)
+listen_thread.join(timeout=7)
 
 try:
     check_input()
