@@ -3,6 +3,7 @@ import subprocess # python runs command in terminal and give back the results
 import tempfile # helps to create temporary files
 from playsound import playsound
 import threading
+import sys
 
 def play_then_delete(audio_file):
     playsound(audio_file) # blocking call by default
@@ -17,7 +18,17 @@ def speak(text : str, voice : str = 'en-CA-LiamNeural') -> None:
         
         # terminal command that converts the given text to audio using selected voice
         # saves it to output_file.
-        command = f'edge-tts --voice {voice} --text "{text}" --write-media {output_file}'
+        command = [
+            sys.executable,
+            "-m",
+            "edge_tts",
+            "--voice",
+            voice,
+            "--text",
+            text,
+            "--write-media",
+            output_file
+        ]
         # runs the given command in terminal
         subprocess.run(command, shell = True, check = True) # check=True if command fails then it will raise error immediately.
 
